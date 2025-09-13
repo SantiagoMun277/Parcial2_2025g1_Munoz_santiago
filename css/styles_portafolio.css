@@ -340,3 +340,12 @@
                 transform: translateY(0);
             }
         }
+
+        .portfolio-image img {
+    filter: blur(6px);
+    transition: filter 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.portfolio-item:hover .portfolio-image img {
+    filter: blur(0);
+}

@@ -238,6 +238,7 @@
             height: 450px;
             position: relative;
         }
+    
 
         .map-placeholder {
             width: 100%;
@@ -253,7 +254,7 @@
 
         .map-overlay {
             position: absolute;
-            bottom: 20px;
+            bottom: 0px;
             left: 20px;
             right: 20px;
             background: rgba(255, 255, 255, 0.95);

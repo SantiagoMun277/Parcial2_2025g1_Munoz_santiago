@@ -246,6 +246,7 @@
             .service-card {
                 margin-bottom: 2rem;
             }
+
         }
 
        
@@ -253,3 +254,34 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        /* Agrega esto a tu styles_inicio.css o comun.css */
+
+.hero-logo-box {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3; /* Mantiene proporción */
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(243,156,18,0.2);
+}
+.hero-logo-box img {
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+    width: auto;
+}
+
+
+@media (max-width: 768px) {
+    .hero-logo-box {
+        max-width: 90vw;
+        aspect-ratio: 4/3;
+    }
+
+}
