@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - CoderHub.run | Nuestros Proyectos</title>
+    <link rel="stylesheet" href="./css/styles_portafolio.css">
+    <link rel="stylesheet" href="./css/comun.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+ 
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html">
+                <img src="img/logo2-removebg-preview.png" alt="CoderHub.run">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1 class="hero-title">Nuestro <span style="color: var(--accent-color);">Portafolio</span></h1>
+                <p class="hero-subtitle">
+                    Descubre los proyectos que hemos desarrollado con tecnologías de vanguardia y diseños innovadores
+                </p>
+                <div class="breadcrumb-nav">
+                    <a href="inicio.html">Inicio</a>
+                    <span>/</span>
+                    <span>Portafolio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="filter-buttons animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">Todos los Proyectos</button>
+                <button class="filter-btn" data-filter="web">Desarrollo Web</button>
+                <button class="filter-btn" data-filter="mobile">Apps Móviles</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="system">Sistemas</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Proyecto 1 - E-commerce -->
+                <div class="portfolio-item" data-category="ecommerce web">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tienda Online Premium">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('ecommerce1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://example-store.com" class="portfolio-action" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">E-commerce</div>
+                        <h3 class="portfolio-title">Tienda Online Premium</h3>
+                        <p class="portfolio-description">
+                            Plataforma de comercio electrónico completa con sistema de pagos integrado, gestión de inventario y panel administrativo avanzado.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React</span>
+                            <span class="portfolio-tag">Node.js</span>
+                            <span class="portfolio-tag">MongoDB</span>
+                            <span class="portfolio-tag">Stripe</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 - App Móvil -->
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="App de Fitness">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('mobile1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://play.google.com/store" class="portfolio-action" target="_blank">
+                                    <i class="fab fa-google-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">App Móvil</div>
+                        <h3 class="portfolio-title">FitTracker Pro</h3>
+                        <p class="portfolio-description">
+                            Aplicación móvil para seguimiento de ejercicios y nutrición con sincronización en tiempo real y comunidad de usuarios activos.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React Native</span>
+                            <span class="portfolio-tag">Firebase</span>
+                            <span class="portfolio-tag">Redux</span>
+                            <span class="portfolio-tag">API REST</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 - Web Corporativa -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Corporativa">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('web1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://empresa-consulting.com" class="portfolio-action" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Desarrollo Web</div>
+                        <h3 class="portfolio-title">Consultoría Empresarial</h3>
+                        <p class="portfolio-description">
+                            Sitio web corporativo moderno con sistema de gestión de contenidos, blog integrado y formularios de contacto avanzados.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">WordPress</span>
+                            <span class="portfolio-tag">PHP</span>
+                            <span class="portfolio-tag">MySQL</span>
+                            <span class="portfolio-tag">SEO</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 - Sistema de Gestión -->
+                <div class="portfolio-item" data-category="system">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sistema de Gestión">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('system1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="#" class="portfolio-action">
+                                    <i class="fas fa-lock"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Sistema</div>
+                        <h3 class="portfolio-title">ERP Empresarial</h3>
+                        <p class="portfolio-description">
+                            Sistema integral de planificación de recursos empresariales con módulos de contabilidad, inventario y recursos humanos.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Angular</span>
+                            <span class="portfolio-tag">Java</span>
+                            <span class="portfolio-tag">PostgreSQL</span>
+                            <span class="portfolio-tag">Spring Boot</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5 - E-commerce Marketplace -->
+                <div class="portfolio-item" data-category="ecommerce web">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketplace">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('marketplace1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://marketplace-demo.com" class="portfolio-action" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Marketplace</div>
+                        <h3 class="portfolio-title">Marketplace Multi-vendedor</h3>
+                        <p class="portfolio-description">
+                            Plataforma de marketplace completa que permite a múltiples vendedores gestionar sus productos y ventas de forma independiente.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Laravel</span>
+                            <span class="portfolio-tag">Vue.js</span>
+                            <span class="portfolio-tag">Redis</span>
+                            <span class="portfolio-tag">AWS</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6 - App de Delivery -->
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="App de Delivery">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <button class="portfolio-action" onclick="openProject('delivery1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://app-delivery.com" class="portfolio-action" target="_blank">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">App Móvil</div>
+                        <h3 class="portfolio-title">DeliveryFast</h3>
+                        <p class="portfolio-description">
+                            Aplicación de delivery con geolocalización en tiempo real, sistema de pagos integrado y panel para restaurantes.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Flutter</span>
+                            <span class="portfolio-tag">Google Maps</span>
+                            <span class="portfolio-tag">PayPal</span>
+                            <span class="portfolio-tag">Socket.IO</span>
+                        </div>
+                        <a href="#" class="portfolio-link">Ver más detalles →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number" data-count="50">0</span>
+                        <div class="stat-label">Proyectos Completados</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number" data-count="45">0</span>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number" data-count="25">0</span>
+                        <div class="stat-label">Tecnologías Dominadas</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item animate-on-scroll">
+                        <span class="stat-number" data-count="99">0</span>
+                        <div class="stat-label">% Satisfacción</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>¿Tienes un proyecto en mente?</h2>
+                <p>Trabajemos juntos para convertir tu idea en una realidad digital exitosa</p>
+                <a href="contacto.html" class="cta-button-white">
+                    <i class="fas fa-rocket"></i>
+                    Iniciar mi Proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>CoderHub.run</h5>
+                    <p>Transformamos ideas en realidades digitales. Somos tu socio estratégico para el éxito tecnológico.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="servicios.html">Desarrollo Web</a></li>
+                        <li><a href="servicios.html">Apps Móviles</a></li>
+                        <li><a href="servicios.html">Consultoría</a></li>
+                        <li><a href="servicios.html">Soporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Empresa</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> +57 (312) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@coderhub.run</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Florencia, Caquetá</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CoderHub.run. Todos los derechos reservados. | Desarrollado en Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="./js/script_portafolio.js">
+  
+    </script>
+</body>
+</html>

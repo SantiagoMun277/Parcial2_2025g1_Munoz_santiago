@@ -1,0 +1,366 @@
+
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient-bg);
+            padding: 150px 0 100px;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23f39c12" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+
+
+        /* Main Content */
+        .main-content {
+            padding: 100px 0;
+        }
+
+  
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+
+        /* Company History */
+        .company-history {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .history-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .history-content h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .history-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .history-timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            background: #e9ecef;
+            transform: translateX(10px);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--accent-color);
+            min-width: 80px;
+            margin-right: 1rem;
+        }
+
+        /* Mission, Vision, Values */
+        .mvv-section {
+            padding: 80px 0;
+        }
+
+        .mvv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .mvv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+            transition: var(--transition);
+        }
+
+        .mvv-card:hover::before {
+            left: 0;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .mvv-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .mvv-card:hover .mvv-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .mvv-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .mvv-card p {
+            color: #6c757d;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .member-image {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-bg);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-member:hover .member-overlay {
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .team-member:hover .social-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .footer .social-links {
+    opacity: 1;
+    transform: translateY(0);
+    gap: 0.5rem;
+}
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .member-info h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .member-role {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .member-description {
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 80px 0;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-item h5 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .skill-item p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .history-content {
+                padding: 2rem;
+            }
+            
+            .mvv-card {
+                margin-bottom: 2rem;
+            }
+            
+            .team-member {
+                margin-bottom: 2rem;
+            }
+        }
+
+        
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }

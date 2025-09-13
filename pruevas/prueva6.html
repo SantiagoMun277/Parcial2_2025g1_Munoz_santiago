@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoderHub.run - Innovación en Desarrollo de Software</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+
+        /* Navegación personalizada */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="10" cy="10" r="10" fill="url(%23a)"><animate attributeName="opacity" dur="2s" values="0;1;0" repeatCount="indefinite"/></circle></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, var(--accent-color), #a8edea);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
+            color: var(--dark-color);
+        }
+
+        /* Secciones */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards personalizadas */
+        .card-custom {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-custom .card-body {
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Team cards */
+        .team-card {
+            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 2rem auto 1rem;
+            border: 5px solid var(--primary-color);
+            object-fit: cover;
+        }
+
+        /* Portfolio grid */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 0.9;
+        }
+
+        /* Formulario */
+        .form-control-custom {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        /* Footer */
+        .footer-custom {
+            background: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* Animaciones personalizadas */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Páginas internas */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .page-content {
+            padding: 80px 0;
+        }
+
+        /* Ocultar páginas por defecto */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__fadeInLeft" href="#" onclick="showPage('home')">
+                <i class="bi bi-code-slash"></i> CoderHub.run
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('about')">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('services')">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('portfolio')">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('contact')">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PÁGINA DE INICIO -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="hero-content" data-aos="fade-right">
+                            <h1 class="animate__animated animate__fadeInUp">Innovamos tu <span style="color: var(--accent-color);">Futuro Digital</span></h1>
+                            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                                Desarrollamos soluciones tecnológicas que transforman ideas en experiencias digitales extraordinarias. Tu próximo gran proyecto comienza aquí.
+                            </p>
+                            <button class="btn btn-custom btn-lg animate__animated animate__fadeInUp animate__delay-2s" onclick="showPage('contact')">
+                                <i class="bi bi-rocket-takeoff me-2"></i>¡Contáctanos Ahora!
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="text-center">
+                            <div class="pulse-animation" style="display: inline-block;">
+                                <i class="bi bi-laptop" style="font-size: 15rem; opacity: 0.3;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA NOSOTROS -->
+    <div id="about" class="page">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="display-4">Conoce Nuestro Equipo</h1>
+                <p class="lead">Profesionales apasionados por la tecnología</p>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- Historia -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                        <h2 class="mb-4">Nuestra Historia</h2>
+                        <p class="lead">
+                            CoderHub.run nació en 2020 con la visión de democratizar el desarrollo de software. 
+                            Fundada por un grupo de ingenieros visionarios, hemos crecido hasta convertirnos en 
+                            una referencia en innovación tecnológica, ayudando a más de 200 empresas a digitalizar 
+                            sus procesos y alcanzar sus objetivos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Misión, Visión, Valores -->
+                <div class="row mb-5">
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h3>Misión</h3>
+                        <p>Transformar ideas innovadoras en soluciones tecnológicas que impulsen el crecimiento y éxito de nuestros clientes.</p>
+                    </div>
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h3>Visión</h3>
+                        <p>Ser la empresa líder en desarrollo de software, reconocida por nuestra innovación, calidad y compromiso con la excelencia.</p>
+                    </div>
+                    <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>Valores</h3>
+                        <p>Innovación continua, transparencia en nuestros procesos, trabajo en equipo y compromiso total con la satisfacción del cliente.</p>
+                    </div>
+                </div>
+
+                <!-- Equipo -->
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Nuestro Equipo</h2>
+                    <p>Conoce a los profesionales que hacen posible cada proyecto</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="100">
+                        <div class="card team-card">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="CEO" class="team-avatar">
+                                <h4>Alejandro Martínez</h4>
+                                <p class="text-muted mb-3">CEO & Fundador</p>
+                                <p>Ingeniero de sistemas con 10+ años de experiencia en desarrollo de software empresarial. Visionario y líder apasionado por la tecnología.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="200">
+                        <div class="card team-card">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616c6ac4c25?w=300&h=300&fit=crop&crop=face" alt="CTO" class="team-avatar">
+                                <h4>María Elena Rodríguez</h4>
+                                <p class="text-muted mb-3">CTO</p>
+                                <p>Especialista en arquitectura de software y tecnologías emergentes. Responsable de la innovación técnica y la calidad de nuestros productos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="flip-left" data-aos-delay="300">
+                        <div class="card team-card">
+                            <div class="card-body">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Lead Developer" class="team-avatar">
+                                <h4>Carlos Mendoza</h4>
+                                <p class="text-muted mb-3">Lead Developer</p>
+                                <p>Desarrollador full-stack con expertise en React, Node.js y bases de datos. Mentor del equipo y gurú en optimización de rendimiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA SERVICIOS -->
+    <div id="services" class="page">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="display-4">Nuestros Servicios</h1>
+                <p class="lead">Soluciones tecnológicas integrales para tu negocio</p>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card card-custom">
+                            <div class="card-body text-center">
+                                <div class="service-icon">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <h4 class="mb-3">Desarrollo Web</h4>
+                                <p>Creamos sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta aplicaciones web complejas con las últimas tecnologías.</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>React, Vue.js, Angular</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Node.js, Python, PHP</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Diseño responsivo</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Optimización SEO</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card card-custom">
+                            <div class="card-body text-center">
+                                <div class="service-icon">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <h4 class="mb-3">Apps Móviles</h4>
+                                <p>Desarrollamos aplicaciones móviles nativas e híbridas para iOS y Android, con enfoque en UX/UI excepcional y alto rendimiento.</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>React Native, Flutter</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>iOS & Android nativo</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Integración con APIs</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Push notifications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card card-custom">
+                            <div class="card-body text-center">
+                                <div class="service-icon">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <h4 class="mb-3">Consultoría Tech</h4>
+                                <p>Asesoramos a tu empresa en la transformación digital, arquitectura de software, y selección de tecnologías adecuadas para tus objetivos.</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Auditoría tecnológica</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Arquitectura de software</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Migración a la nube</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Estrategia digital</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card card-custom">
+                            <div class="card-body text-center">
+                                <div class="service-icon">
+                                    <i class="bi bi-tools"></i>
+                                </div>
+                                <h4 class="mb-3">Soporte Técnico</h4>
+                                <p>Ofrecemos soporte técnico 24/7, mantenimiento de aplicaciones, actualizaciones de seguridad y monitoreo continuo de sistemas.</p>
+                                <ul class="list-unstyled text-start mt-3">
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Soporte 24/7</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Mantenimiento preventivo</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Actualizaciones de seguridad</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i>Monitoreo en tiempo real</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA PORTAFOLIO -->
+    <div id="portfolio" class="page">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="display-4">Nuestro Portafolio</h1>
+                <p class="lead">Algunos de nuestros proyectos más destacados</p>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=400&fit=crop" alt="Proyecto 1" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div>
+                                    <h4>EcoMerce Platform</h4>
+                                    <p>Plataforma de e-commerce sostenible con integración de pagos y gestión de inventario inteligente.</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-light text-dark me-2">React</span>
+                                        <span class="badge bg-light text-dark me-2">Node.js</span>
+                                        <span class="badge bg-light text-dark">MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=400&fit=crop" alt="Proyecto 2" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div>
+                                    <h4>HealthTrack Mobile</h4>
+                                    <p>Aplicación móvil para seguimiento de salud personal con IoT y análisis predictivo con IA.</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-light text-dark me-2">React Native</span>
+                                        <span class="badge bg-light text-dark me-2">Python</span>
+                                        <span class="badge bg-light text-dark">TensorFlow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=400&fit=crop" alt="Proyecto 3" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div>
+                                    <h4>SmartOffice Dashboard</h4>
+                                    <p>Sistema de gestión empresarial con dashboard interactivo y reportes en tiempo real.</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-light text-dark me-2">Vue.js</span>
+                                        <span class="badge bg-light text-dark me-2">Laravel</span>
+                                        <span class="badge bg-light text-dark">PostgreSQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="portfolio-item">
+                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&h=400&fit=crop" alt="Proyecto 4" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div>
+                                    <h4>EduLearn Platform</h4>
+                                    <p>Plataforma educativa online con videoconferencias, exámenes automatizados y gamificación.</p>
+                                    <div class="mt-3">
+                                        <span class="badge bg-light text-dark me-2">Angular</span>
+                                        <span class="badge bg-light text-dark me-2">ASP.NET</span>
+                                        <span class="badge bg-light text-dark">SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA CONTACTO -->
+    <div id="contact" class="page">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="display-4">Contáctanos</h1>
+                <p class="lead">¿Listo para comenzar tu próximo proyecto? Hablemos</p>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card card-custom" data-aos="fade-up">
+                            <div class="card-body p-5">
+                                <form id="contactForm" onsubmit="handleSubmit(event)">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nombre" class="form-label">Nombre Completo *</label>
+                                            <input type="text" class="form-control form-control-custom" id="nombre" required>
+                                            <div class="invalid-feedback">Por favor ingrese su nombre completo.</div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="correo" class="form-label">Correo Electrónico *</label>
+                                            <input type="email" class="form-control form-control-custom" id="correo" required>
+                                            <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="asunto" class="form-label">Asunto *</label>
+                                        <select class="form-control form-control-custom" id="asunto" required>
+                                            <option value="">Seleccione un asunto</option>
+                                            <option value="desarrollo-web">Desarrollo Web</option>
+                                            <option value="apps-moviles">Aplicaciones Móviles</option>
+                                            <option value="consultoria">Consultoría Tecnológica</option>
+                                            <option value="soporte">Soporte Técnico</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor seleccione un asunto.</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="mensaje" class="form-label">Mensaje *</label>
+                                        <textarea class="form-control form-control-custom" id="mensaje" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                                        <div class="invalid-feedback">Por favor ingrese su mensaje.</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-custom btn-lg">
+                                            <i class="bi bi-send me-2"></i>Enviar Mensaje
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="row mt-5">
+                    <div class="col-lg-4 text-center mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h4>Ubicación</h4>
+                        <p>Calle 123 #45-67<br>Florencia, Caquetá<br>Colombia</p>
+                    </div>
+                    <div class="col-lg-4 text-center mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <h4>Teléfono</h4>
+                        <p>+57 (8) 123-4567<br>+57 300 123 4567</p>
+                    </div>
+                    <div class="col-lg-4 text-center mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>info@coderhub.run<br>contacto@coderhub.run</p>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="row mt-5">
+                    <div class="col-12" data-aos="fade-up">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.2558!2d-75.6141!3d1.6186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzcnMDcuMCJOIDc1wrAzNic1Mi44Ilc!5e0!3m2!1ses!2sco!4v1625000000000!5m2!1ses!2sco" 
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0; border-radius: 20px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-code-slash me-2"></i>CoderHub.run
+                    </h5>
+                    <p>Transformamos ideas en soluciones tecnológicas innovadoras. Tu socio confiable en el mundo digital.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Contacto</h5>
+                    <p><i class="bi bi-geo-alt me-2"></i>Calle 123 #45-67, Florencia, Caquetá</p>
+                    <p><i class="bi bi-telephone me-2"></i>+57 (8) 123-4567</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@coderhub.run</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Síguenos</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 CoderHub.run. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navegación entre páginas
+        function showPage(pageId) {
+            // Ocultar todas las páginas
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Mostrar la página seleccionada
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Actualizar navegación activa
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Cerrar menú móvil si está abierto
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        }
+
+        // Validación y envío del formulario
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Validación básica
+            const nombre = document.getElementById('nombre').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const asunto = document.getElementById('asunto').value;
+            const mensaje = document.getElementById('mensaje').value.trim();
+            
+            let isValid = true;
+            
+            // Validar nombre
+            if (!nombre) {
+                document.getElementById('nombre').classList.add('is-invalid');
+                isValid = false;
+            } else {
+                document.getElementById('nombre').classList.remove('is-invalid');
+                document.getElementById('nombre').classList.add('is-valid');
+            }
+            
+            // Validar correo
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!correo || !emailRegex.test(correo)) {
+                document.getElementById('correo').classList.add('is-invalid');
+                isValid = false;
+            } else {
+                document.getElementById('correo').classList.remove('is-invalid');
+                document.getElementById('correo').classList.add('is-valid');
+            }
+            
+            // Validar asunto
+            if (!asunto) {
+                document.getElementById('asunto').classList.add('is-invalid');
+                isValid = false;
+            } else {
+                document.getElementById('asunto').classList.remove('is-invalid');
+                document.getElementById('asunto').classList.add('is-valid');
+            }
+            
+            // Validar mensaje
+            if (!mensaje || mensaje.length < 10) {
+                document.getElementById('mensaje').classList.add('is-invalid');
+                isValid = false;
+            } else {
+                document.getElementById('mensaje').classList.remove('is-invalid');
+                document.getElementById('mensaje').classList.add('is-valid');
+            }
+            
+            if (isValid) {
+                // Simular envío exitoso
+                alert('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.');
+                form.reset();
+                
+                // Limpiar clases de validación
+                const inputs = form.querySelectorAll('.form-control');
+                inputs.forEach(input => {
+                    input.classList.remove('is-valid', 'is-invalid');
+                });
+            }
+        }
+
+        // Efecto parallax suave en el scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection && document.getElementById('home').classList.contains('active')) {
+                heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Efecto de navbar al hacer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animación de typing para el hero
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Inicializar efectos cuando la página carga
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader simple
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+            
+            // Inicializar tooltips de Bootstrap si los hay
+            const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            tooltips.forEach(tooltip => {
+                new bootstrap.Tooltip(tooltip);
+            });
+        });
+
+        // Función para animaciones de contadores (opcional)
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.ceil(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            }
+            updateCounter();
+        }
+
+        // Smooth scroll para los enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

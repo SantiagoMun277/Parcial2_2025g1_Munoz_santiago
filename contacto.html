@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - CoderHub.run | Hablemos de tu Proyecto</title>
+    <link rel="stylesheet" href="./css/styles_contacto.css">
+    <link rel="stylesheet" href="./css/comun.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html">
+                <img src="img/logo2-removebg-preview.png" alt="CoderHub.run">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1 class="hero-title">¡Hablemos de tu <span style="color: var(--accent-color);">Proyecto</span>!</h1>
+                <p class="hero-subtitle">
+                    Estamos listos para convertir tu idea en una realidad digital exitosa. Contáctanos y comencemos a trabajar juntos.
+                </p>
+                <div class="breadcrumb-nav">
+                    <a href="inicio.html">Inicio</a>
+                    <span>/</span>
+                    <span>Contacto</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Ponte en Contacto</h2>
+                <p>Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 animate-on-scroll">
+                    <form class="contact-form" id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName">Nombre *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Tu nombre" required>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName">Apellido *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Tu apellido" required>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Correo Electrónico *</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Teléfono</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+57 123 456 7890">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="company">Empresa</label>
+                                    <input type="text" class="form-control" id="company" name="company" placeholder="Nombre de tu empresa">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="service">Servicio de Interés *</label>
+                                    <select class="form-select" id="service" name="service" required>
+                                        <option value="">Selecciona un servicio</option>
+                                        <option value="desarrollo-web">Desarrollo Web</option>
+                                        <option value="app-movil">Aplicación Móvil</option>
+                                        <option value="ecommerce">E-commerce</option>
+                                        <option value="sistema-gestion">Sistema de Gestión</option>
+                                        <option value="consultoria">Consultoría Tecnológica</option>
+                                        <option value="mantenimiento">Mantenimiento y Soporte</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="budget">Presupuesto Estimado</label>
+                            <select class="form-select" id="budget" name="budget">
+                                <option value="">Selecciona un rango</option>
+                                <option value="menos-5k">Menos de $5,000 USD</option>
+                                <option value="5k-10k">$5,000 - $10,000 USD</option>
+                                <option value="10k-25k">$10,000 - $25,000 USD</option>
+                                <option value="25k-50k">$25,000 - $50,000 USD</option>
+                                <option value="mas-50k">Más de $50,000 USD</option>
+                                <option value="no-definido">Aún no definido</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="timeline">¿Cuándo necesitas el proyecto?</label>
+                            <select class="form-select" id="timeline" name="timeline">
+                                <option value="">Selecciona un plazo</option>
+                                <option value="urgente">Lo antes posible (1-2 semanas)</option>
+                                <option value="1-mes">En el próximo mes</option>
+                                <option value="2-3-meses">En 2-3 meses</option>
+                                <option value="6-meses">En 6 meses</option>
+                                <option value="flexible">Soy flexible con el tiempo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Describe tu proyecto *</label>
+                            <textarea class="form-control" id="message" name="message" placeholder="Cuéntanos sobre tu proyecto, objetivos, funcionalidades que necesitas, público objetivo, etc." required></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Enviar Mensaje</span>
+                        </button>
+
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <h4>¡Mensaje Enviado Exitosamente!</h4>
+                            <p>Gracias por contactarnos. Nuestro equipo revisará tu mensaje y se pondrá en contacto contigo dentro de las próximas 24 horas.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-card animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <p>Escríbenos directamente a nuestro correo principal</p>
+                            <a href="mailto:info@coderhub.run" class="contact-link">info@coderhub.run</a>
+                        </div>
+
+                        <div class="contact-card animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Teléfono</h4>
+                            <p>Llámanos de lunes a viernes de 8:00 AM a 6:00 PM</p>
+                            <a href="tel:+573124567890" class="contact-link">+57 (312) 456-7890</a>
+                        </div>
+
+                        <div class="contact-card animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h4>WhatsApp</h4>
+                            <p>Chatea con nosotros por WhatsApp para respuesta rápida</p>
+                            <a href="https://wa.me/573124567890" class="contact-link" target="_blank">Abrir WhatsApp</a>
+                        </div>
+
+                        <div class="contact-card animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Ubicación</h4>
+                            <p>Nos encontramos en el corazón de Colombia</p>
+                            <span class="contact-link">Florencia, Caquetá, Colombia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Nuestra Ubicación</h2>
+                <p>Estamos ubicados estratégicamente en Florencia, Caquetá, con alcance nacional e internacional</p>
+            </div>
+
+            <div class="map-container animate-on-scroll">
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                        <br>
+                        <strong>Mapa interactivo de Google Maps</strong>
+                        <br>
+                        <small>Integrar con Google Maps API</small>
+                    </div>
+                </div>
+                
+                <div class="map-overlay">
+                    <h5>CoderHub.run</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Florencia, Caquetá, Colombia</p>
+                    <p><i class="fas fa-clock"></i> Lun - Vie: 8:00 AM - 6:00 PM</p>
+                    <p><i class="fas fa-phone"></i> +57 (312) 456-7890</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos las dudas más comunes sobre nuestros servicios y procesos</p>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            ¿Cuánto tiempo toma desarrollar un proyecto?
+                        </button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            El tiempo de desarrollo varía según la complejidad del proyecto. Un sitio web básico puede tomar 2-4 semanas, mientras que aplicaciones complejas o sistemas empresariales pueden requerir 3-6 meses. Durante la consulta inicial, te proporcionaremos un cronograma detallado basado en tus necesidades específicas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            ¿Ofrecen soporte y mantenimiento después del lanzamiento?
+                        </button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sí, ofrecemos diferentes planes de soporte y mantenimiento. Incluimos garantía gratuita por 3 meses después del lanzamiento, y tenemos planes de mantenimiento mensual que cubren actualizaciones, backups de seguridad, monitoreo y soporte técnico 24/7.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            ¿Cómo manejan los pagos y cuál es su política de reembolso?
+                        </button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Trabajamos con un sistema de pagos por hitos: 50% al inicio del proyecto, 30% a la mitad del desarrollo y 20% al finalizar. Aceptamos transferencias bancarias, PayPal y criptomonedas. Ofrecemos garantía de satisfacción del 100% durante los primeros 30 días del proyecto.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            ¿Trabajan con clientes internacionales?
+                        </button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutamente. Trabajamos con clientes de toda América Latina, Estados Unidos y Europa. Tenemos experiencia en proyectos internacionales y manejamos diferentes zonas horarias. Toda nuestra comunicación puede ser en español o inglés según tus preferencias.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            ¿Qué tecnologías utilizan para el desarrollo?
+                        </button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Utilizamos tecnologías modernas y probadas: React, Node.js, Python, PHP, Laravel, WordPress para web; React Native y Flutter para móviles; AWS y Google Cloud para hosting. Elegimos la mejor tecnología según las necesidades específicas de cada proyecto para garantizar rendimiento, escalabilidad y mantenimiento óptimos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item animate-on-scroll">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                            ¿Puedo ver el progreso del proyecto durante el desarrollo?
+                        </button>
+                    </h3>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Por supuesto. Proporcionamos acceso a un panel de cliente donde puedes ver el progreso en tiempo real, revisar entregas parciales, y comunicarte directamente con el equipo de desarrollo. También programamos reuniones semanales de seguimiento para mantener una comunicación fluida y transparente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>CoderHub.run</h5>
+                    <p>Transformamos ideas en realidades digitales. Somos tu socio estratégico para el éxito tecnológico.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="servicios.html">Desarrollo Web</a></li>
+                        <li><a href="servicios.html">Apps Móviles</a></li>
+                        <li><a href="servicios.html">Consultoría</a></li>
+                        <li><a href="servicios.html">Soporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Empresa</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> +57 (312) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@coderhub.run</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Florencia, Caquetá</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CoderHub.run. Todos los derechos reservados. | Desarrollado en Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="./js/script_contacto.js">
+
+    </script>
+</body>
+</html>

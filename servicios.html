@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - CoderHub.run</title>
+    <link rel="stylesheet" href="./css/styles_servicios.css">
+    <link rel="stylesheet" href="./css/comun.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo2-removebg-preview.png" alt="">
+               
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portafolio.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <nav class="breadcrumb-custom">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="inicio.html">Inicio</a></li>
+                    <li class="breadcrumb-item active">Servicios</li>
+                </ol>
+            </nav>
+            <h1 class="animate__animated animate__fadeInUp">Nuestros Servicios</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                Ofrecemos soluciones tecnológicas completas y personalizadas para transformar tu visión en realidad digital. 
+                Desde desarrollo web hasta consultoría especializada, tenemos la experiencia para llevar tu proyecto al siguiente nivel.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Soluciones Tecnológicas Completas</h2>
+                <p>Servicios diseñados para impulsar tu negocio hacia el éxito digital</p>
+            </div>
+            
+            <div class="row">
+                <!-- Desarrollo Web -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Creamos sitios web modernos, responsivos y optimizados que convierten visitantes en clientes. Utilizamos las últimas tecnologías para garantizar performance excepcional y experiencias memorables.</p>
+                        <ul class="service-features">
+                            <li>Diseño responsivo y mobile-first</li>
+                            <li>Optimización SEO avanzada</li>
+                            <li>Integración con CMS personalizados</li>
+                            <li>Performance y velocidad optimizada</li>
+                            <li>Seguridad y mantenimiento incluido</li>
+                        </ul>
+                        <div class="service-price">Desde $2.500.000 COP</div>
+                        <a href="contacto.html" class="service-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Apps Móviles -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Aplicaciones Móviles</h3>
+                        <p>Desarrollamos aplicaciones móviles nativas y multiplataforma que brindan experiencias excepcionales en iOS y Android, conectando tu negocio con usuarios en cualquier lugar.</p>
+                        <ul class="service-features">
+                            <li>Apps nativas iOS y Android</li>
+                            <li>Desarrollo multiplataforma React Native</li>
+                            <li>Integración con APIs y servicios web</li>
+                            <li>Diseño UX/UI intuitivo</li>
+                            <li>Publicación en App Store y Play Store</li>
+                        </ul>
+                        <div class="service-price">Desde $8.500.000 COP</div>
+                        <a href="contacto.html" class="service-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Consultoría Tecnológica -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Consultoría Tecnológica</h3>
+                        <p>Estrategias tecnológicas personalizadas para optimizar tus procesos empresariales, mejorar la eficiencia operativa y acelerar tu transformación digital.</p>
+                        <ul class="service-features">
+                            <li>Auditoría de sistemas existentes</li>
+                            <li>Estrategia de transformación digital</li>
+                            <li>Selección de tecnologías apropiadas</li>
+                            <li>Optimización de procesos</li>
+                            <li>Roadmap tecnológico personalizado</li>
+                        </ul>
+                        <div class="service-price">Desde $1.800.000 COP</div>
+                        <a href="contacto.html" class="service-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Soporte y Mantenimiento -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Soporte 24/7</h3>
+                        <p>Mantenimiento proactivo y soporte técnico continuo para garantizar el funcionamiento óptimo de tus sistemas, con monitoreo constante y respuesta inmediata.</p>
+                        <ul class="service-features">
+                            <li>Monitoreo 24/7 de sistemas</li>
+                            <li>Actualizaciones y parches de seguridad</li>
+                            <li>Backup automático y recuperación</li>
+                            <li>Soporte técnico especializado</li>
+                            <li>Reportes mensuales de performance</li>
+                        </ul>
+                        <div class="service-price">Desde $850.000 COP/mes</div>
+                        <a href="contacto.html" class="service-btn">
+                            <i class="fas fa-arrow-right"></i>
+                            Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Nuestro Proceso de Trabajo</h2>
+                <p>Una metodología probada que garantiza resultados excepcionales en cada proyecto</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>01</span>
+                        </div>
+                        <h4>Análisis</h4>
+                        <p>Estudiamos tus necesidades y objetivos para crear una estrategia personalizada.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>02</span>
+                        </div>
+                        <h4>Diseño</h4>
+                        <p>Creamos prototipos y wireframes que reflejan la mejor experiencia posible.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>03</span>
+                        </div>
+                        <h4>Desarrollo</h4>
+                        <p>Construimos tu solución con las mejores prácticas y tecnologías actuales.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>04</span>
+                        </div>
+                        <h4>Testing</h4>
+                        <p>Realizamos pruebas exhaustivas para garantizar calidad y funcionamiento perfecto.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>05</span>
+                        </div>
+                        <h4>Lanzamiento</h4>
+                        <p>Desplegamos tu proyecto con todas las configuraciones optimizadas.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">
+                            <span>06</span>
+                        </div>
+                        <h4>Soporte</h4>
+                        <p>Brindamos mantenimiento continuo y mejoras constantes del sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Tecnologías que Dominamos</h2>
+                <p>Utilizamos las herramientas más avanzadas para crear soluciones de vanguardia</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-category animate-on-scroll">
+                        <h4>Frontend</h4>
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-vue"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-angular"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-category animate-on-scroll">
+                        <h4>Backend</h4>
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-category animate-on-scroll">
+                        <h4>Móvil</h4>
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-swift"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-android"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="tech-category animate-on-scroll">
+                        <h4>Cloud & DevOps</h4>
+                        <div class="tech-icons">
+                            <div class="tech-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>¿Listo para Iniciar tu Proyecto?</h2>
+                <p>
+                    Contáctanos hoy mismo y descubre cómo nuestros servicios pueden transformar tu negocio. 
+                    Ofrecemos consultoría gratuita para evaluar tus necesidades y proponer la mejor solución.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="cta-button">
+                        <i class="fas fa-rocket"></i>
+                        Comenzar Proyecto
+                    </a>
+                    <a href="portafolio.html" class="cta-button cta-button-outline">
+                        <i class="fas fa-eye"></i>
+                        Ver Portafolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>CoderHub.run</h5>
+                    <p>Transformamos ideas en realidades digitales. Somos tu socio estratégico para el éxito tecnológico.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="servicios.html">Desarrollo Web</a></li>
+                        <li><a href="servicios.html">Apps Móviles</a></li>
+                        <li><a href="servicios.html">Consultoría</a></li>
+                        <li><a href="servicios.html">Soporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Empresa</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> +57 (312) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@coderhub.run</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Florencia, Caquetá</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 CoderHub.run. Todos los derechos reservados. | Desarrollado en Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="./js/script_servicios.js">
+    </script>
+</body>
+</html>
