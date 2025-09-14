@@ -271,3 +271,100 @@
 
         // Initialize character counter
         messageField.dispatchEvent(new Event('input'));
+
+
+
+        // ///////////////
+
+         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const form = e.target;
+            const formData = new FormData(form);
+            let isValid = true;
+            
+            // Reset previous validation states
+            const inputs = form.querySelectorAll('.form-control, .form-select');
+            inputs.forEach(input => {
+                input.classList.remove('is-invalid', 'is-valid');
+                const feedback = input.parentNode.querySelector('.invalid-feedback');
+                if (feedback) feedback.textContent = '';
+            });
+            
+            // Validate required fields
+            const requiredFields = ['firstName', 'lastName', 'email', 'service', 'message'];
+            requiredFields.forEach(fieldName => {
+                const field = form.querySelector(`[name="${fieldName}"]`);
+                const value = formData.get(fieldName);
+                
+                if (!value || value.trim() === '') {
+                    field.classList.add('is-invalid');
+                    const feedback = field.parentNode.querySelector('.invalid-feedback');
+                    if (feedback) feedback.textContent = 'Este campo es obligatorio';
+                    isValid = false;
+                } else {
+                    field.classList.add('is-valid');
+                }
+            });
+            
+            // Validate email
+            const emailField = form.querySelector('[name="email"]');
+            const emailValue = formData.get('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (emailValue && !emailRegex.test(emailValue)) {
+                emailField.classList.remove('is-valid');
+                emailField.classList.add('is-invalid');
+                const feedback = emailField.parentNode.querySelector('.invalid-feedback');
+                if (feedback) feedback.textContent = 'Por favor ingresa un email válido';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Enviando...</span>';
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                    
+                    // Show success message
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.classList.add('show');
+                    
+                    // Reset form
+                    form.reset();
+                    inputs.forEach(input => {
+                        input.classList.remove('is-invalid', 'is-valid');
+                    });
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Hide success message after 10 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 10000);
+                    
+                }, 2000);
+            }
+        });
+        
+        // Add floating labels effect
+        const inputs = document.querySelectorAll('.form-control, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentNode.classList.remove('focused');
+                }
+            });
+        });
