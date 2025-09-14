@@ -32,13 +32,13 @@
             z-index: 2;
         }
 
-        .hero-title {
-            font-size: 4rem;
+         .hero-title {
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-light);
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+        } 
 
         .hero-subtitle {
             font-size: 1.4rem;
@@ -305,5 +305,20 @@
     }
 
 
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-section {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .hero-logo-box {
+        max-width: 90vw;
+        padding: 1rem;
+    }
 }
 
