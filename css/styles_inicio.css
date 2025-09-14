@@ -260,7 +260,7 @@
 .hero-logo-box {
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 4/3; /* Mantiene proporción */
+    aspect-ratio: 4/3;
     background: rgba(255,255,255,0.1);
     border-radius: 20px;
     display: flex;
@@ -269,6 +269,8 @@
     margin: 0 auto 2rem auto;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(243,156,18,0.2);
+    padding: 2rem; /* <-- Espacio interno */
+    box-sizing: border-box; /* <-- Importante para que el padding no desborde */
 }
 .hero-logo-box img {
     max-width: 80%;
@@ -276,12 +278,32 @@
     height: auto;
     width: auto;
 }
+.hero-section {
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4rem;   /* Asegura espacio arriba */
+    padding-bottom: 4rem; /* Asegura espacio abajo */
+}
 
 
 @media (max-width: 768px) {
     .hero-logo-box {
         max-width: 90vw;
         aspect-ratio: 4/3;
+        padding: 1rem;
+    }
+        .hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+        .hero-logo-box img {
+        max-width: 90%;
     }
 
+
 }
+
